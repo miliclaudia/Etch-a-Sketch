@@ -1,0 +1,144 @@
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.grid-size {
+  padding: 0;
+  margin: 0;
+}
+
+.window {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #badbfb;
+  border: solid 7px #b86d83;
+  border-radius: 40px;
+
+  width: 700px;
+  height: 600px;
+
+  .tools {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-bottom: solid 5px #b86d83;
+    border-left: solid 5px #b86d83;
+    border-top: solid 5px #b86d83;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    
+    gap: 2rem;
+    background-color: #feebec;
+    width: 70px;
+    height: 555px;
+
+    button {
+      background-color: transparent;
+      border: none;
+      margin: 0;
+      padding: 0;
+      border-radius: 0;
+    }
+
+    .img {
+      width: 60px;
+      height: auto;
+    }
+  }
+}
+
+
+.color-palette {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 480px;
+  height: 70px;
+  background-color: #feebec;
+
+  border-bottom: solid 5px #b86d83;
+  border-right: solid 5px #b86d83;
+  border-left: solid 5px #b86d83;
+  border-bottom-right-radius: 10px;
+
+  .color {
+    width: 35px;
+    height: 35px;
+    border: solid #b86d83;
+    border-radius: 5px;
+  }
+}
+
+#pink{
+  background-color: #ffb2ce;
+}
+#orange{
+  background-color: #ffd295;
+}
+#yellow{
+  background-color: #ffec8f;
+}
+#green{
+  background-color: #baff93;
+}
+#blue{
+  background-color: rgb(187, 218, 254);
+}
+#purple{
+  background-color: #cfb1ff;
+}
+#white{
+  background-color: #feffff;
+}
+#rgb{
+  background-color: #767676;
+}
+
+input{
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  appearance: none;
+  border-radius: 0;
+  width: 35px;
+  height: 35px;
+}
+
+input[type="color"]::-moz-color-swatch {
+  border: none;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+  border-radius: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 480px;
+  height: 480px;
+  border: solid 5px #b86d83;
+  border-top-right-radius: 10px;
+}
+
+.cell {
+  background-color: white;
+}
