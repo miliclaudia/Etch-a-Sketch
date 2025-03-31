@@ -1,6 +1,7 @@
 const container = document.querySelector(".container");
 const gridSelect = document.querySelector("#grid");
 
+
 const dimensiuneBord = 480;
 let nrPixeli = gridSelect.value;
 let dimensiunePixel = dimensiuneBord / nrPixeli;
@@ -36,6 +37,7 @@ function makeGrid() {
 let isDrawing = false;
 let isPicking = false;
 let isRainbow = false;
+let isErasing = false;
 
 
 container.addEventListener("mousedown", (event) => {
@@ -43,6 +45,12 @@ container.addEventListener("mousedown", (event) => {
         currentColor = window.getComputedStyle(event.target).backgroundColor;
         isDrawing = true;
         isPicking = false;
+
+        const picker = document.querySelector("#picker");
+        const pencil = document.querySelector("#pencil");
+
+        picker.classList.remove('active');
+        pencil.classList.add('active');
         return;
     }
     if (event.target && event.target.classList.contains("cell")) {
@@ -64,12 +72,15 @@ document.addEventListener("mouseup", () => {
 function changeCellColor(cell) {
     if (isErasing) {
         cell.style.backgroundColor = "white"; // Culoarea "ștearsă"
+        return;
     }
-    if (isDrawing) {
+    if (isDrawing && !isRainbow) {
         cell.style.backgroundColor = currentColor;
+        return;
     }
     if (isRainbow) {
         cell.style.backgroundColor = randomColors();
+        return;
     }
 }
 
@@ -97,6 +108,7 @@ colorPalette.addEventListener('click', (event) => {
     if (event.target && event.target.classList.contains("color")) {
         const bgColor = window.getComputedStyle(event.target).backgroundColor;
         currentColor = bgColor;
+
     }
 });
 
@@ -107,29 +119,48 @@ document.querySelector(".color-input").addEventListener("input", function () {
 
 
 //Tools
-let isErasing = false;
+
 
 function eraser() {
     isErasing = true;
     isPicking = false;
+    isRainbow = false;
 }
 
 function pencil() {
     isErasing = false;
     isPicking = false;
+    isRainbow = false;
 }
 
 
 function picker() {
     isPicking = true;
+    isErasing = false;
+    isRainbow = false;
 }
 
 
 function rainbow() {
     isRainbow = true;
+    isErasing = false;
+    isPicking = false;
 }
 
+function setActive(clickedButton) {
+    // Elimină clasa "active" de la toate butoanele
+    const buttons = document.querySelectorAll('.tools button');
+    buttons.forEach(button => {
+        button.classList.remove('active');
+    });
 
+    // Adaugă clasa "active" butonului apăsat
+    clickedButton.classList.add('active');
+}
+
+function refresh(){
+    makeGrid()
+}
 
 
 

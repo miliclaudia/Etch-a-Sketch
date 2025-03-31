@@ -1,47 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
     <title>Etch-a-Sketch</title>
 </head>
+
 <body>
 
     <div class="window">
+        <div class="top-bar">
+            <p>PICATSSO</p>
 
-        <div class="tools">
-            <button id="pencil" onclick = pencil()><img class="img" src="/images/pencil.png"></button>
-            <button id="eraser" onclick = eraser()><img class="img" src="/images/eraser.png"></button>
-            <button id="picker" onclick = picker()><img class="img" src="/images/picker.png"></button>
-            <button id="bucket" onclick = bucket()><img class="img" src="/images/bucket.png"></button>
-            <button id="rainbow" onclick = rainbow()><img class="img" src="/images/rainbow.png"></button>
-        </div>
-        <div class="canvas">
-            <div class="container"></div>
-
-            <div class="color-palette">
-                <div class="color" id="pink"></div>
-                <div class="color" id="orange"></div>
-                <div class="color" id="yellow"></div>
-                <div class="color" id="green"></div>
-                <div class="color" id="blue"></div>
-                <div class="color" id="purple"></div>
-                <div class="color" id="white"></div>
-                <div class="color" id="rgb"><input class="color-input" type="color" value="#767676"></div>
+            <div class="top-circles">
+                <div class="circle" id="yellow-circle"></div>
+                <div class="circle" id="green-circle"></div>
+                <div class="circle" id="pink-circle"></div>
             </div>
+        </div>
+
+        <div class="elements">
+            <div class="tools">
+                <button id="pencil" onclick="setActive(this); pencil();"><img class="img" src="/images/pencil.png"></button>
+                <button id="eraser" onclick="setActive(this); eraser();"><img class="img" src="/images/eraser.png"></button>
+                <button id="picker" onclick="setActive(this); picker();"><img class="img" src="/images/picker.png"></button>
+                <button id="rainbow" onclick="setActive(this); rainbow();"><img class="img" src="/images/rainbow.png"></button>
+                <button id="refresh" onclick=refresh()><img class="img" src="/images/refresh.png"></button>
+            </div>
+            <div class="canvas">
+                <div class="container"></div>
+
+                <div class="color-palette">
+                    <div class="color" id="pink"></div>
+                    <div class="color" id="orange"></div>
+                    <div class="color" id="yellow"></div>
+                    <div class="color" id="green"></div>
+                    <div class="color" id="blue"></div>
+                    <div class="color" id="purple"></div>
+                    <div class="color" id="white"></div>
+                    <div class="color" id="rgb"><input class="color-input" type="color" value="#767676"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-size">
+            <label for="grid">Choose a grid:</label>
+            <select name="grid" id="grid" onchange="changeResolution()">
+                <option value="16">16x16</option>
+                <option value="32">32x32</option>
+                <option value="64">64x64</option>
+            </select>
         </div>
     </div>
 
-    <div class="grid-size">
-        <label for="grid">Choose a grid:</label>
-        <select name="grid" id="grid" onchange="changeResolution()">
-            <option value="16">16x16</option>
-            <option value="32">32x32</option>
-            <option value="64">64x64</option>
-          </select>
+    <div class="background">
+        
     </div>
 
 </body>
 <script src="javascript.js"></script>
+
 </html>
