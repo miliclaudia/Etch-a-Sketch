@@ -85,11 +85,24 @@ body {
     width: 560px;
     font-size: 40px;
 
-    p {
-      padding: 0;
-      margin: 0;
-      color: #b86d83;
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      p {
+        padding: 0;
+        margin: 0;
+        color: #b86d83;
+      }
+
+      img {
+        width: 40px;
+        height: 40px;
+      }
     }
+
+
   }
 
   .top-circles {
@@ -151,12 +164,12 @@ body {
       transition: 0.3s;
     }
 
-    button:hover{
+    button:hover {
       transform: scale(1.1);
     }
 
     .active {
-      filter:brightness(1.4);
+      filter: brightness(1.4);
       transform: translateY(2px);
     }
 
