@@ -6,8 +6,12 @@
 
 ## 📸 Screenshot
 
-![App Preview](./images/Screenshot.png)
-*Unleash your inner pixel artist!*
+<p align="center">
+  <img src="./images/Screenshot.png" alt="App Preview" width="400"/>
+</p>
+
+<p align="center"><em>Unleash your inner pixel artist!</em></p>
+
 
 ---
 
