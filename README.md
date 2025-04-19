@@ -4,7 +4,7 @@
 
 ---
 
-## 📸 Screenshot
+## 🖼️ Preview
 
 <p align="center">
   <img src="./images/Screenshot.png" alt="App Preview" width="400"/>
